@@ -10,14 +10,14 @@ app.get('/api/insults', (request, response) => {
 });
 
 app.post('/api/insults/add', (request, response) => {
-    const insult = request.body;
+    const insult = request.body; // Plocka ut det som skickats med i body från frontend
     console.log(insult);
-    insultsJSON.insults.push(insult);
+    insultsJSON.insults.push(insult); // Spara i vår array
 
     response.json({ success: true, message: 'Insult saved!' });
 });
 
-app.listen(8000, () => {
+app.listen(8000, () => { // Starta igång vår webbserver genom att lyssna på ett portnummer
     console.log('Server started on port 8000');
 });
 
